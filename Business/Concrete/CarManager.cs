@@ -13,12 +13,12 @@ namespace Business.Concrete
     public class CarManager : ICarService
     {
         ICarDal _carDal;
-
+         
         public CarManager(ICarDal carDal)
         {
             _carDal = carDal;
         }
-
+         
 
         public IResult Add(Car entity)
         {
@@ -47,7 +47,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetAll()
         {
-            if (DateTime.Now.Hour == 15)
+            if (DateTime.Now.Hour == 22)
             {
                 return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
             }

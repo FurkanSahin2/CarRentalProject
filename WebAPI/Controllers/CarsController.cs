@@ -18,17 +18,64 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("getall")]
-        
-        public IActionResult Get()
+
+        public IActionResult GetAll()
         {
             var result = _carService.GetAll();
-            if (result.Success) 
+            if (result.Success)
             {
                 return Ok(result);
             }
-             return BadRequest(result);
+            return BadRequest(result);
         }
 
+        [HttpGet("getallbybrandid")]
+        public IActionResult GetAllByBrandId(int brandId)
+        {
+            var result = _carService.GetAllByBrandId(brandId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getallbycolorid")]
+
+        public IActionResult GetAllByColorId(int colorId)
+        {
+            var result = _carService.GetAllByColorId(colorId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getcardetails")]
+
+        public IActionResult GetCarDetails()
+        {
+            var result = _carService.GetCarDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            } 
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _carService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+    
         [HttpPost("add")]    
         public IActionResult Add(Car entity)
         {
@@ -37,7 +84,7 @@ namespace WebAPI.Controllers
             {
                 return Ok(result);
             }  
-               return BadRequest(result);
+            return BadRequest(result);
         }
 
         [HttpPost("update")]
@@ -61,6 +108,8 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+
 
 
     }

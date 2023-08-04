@@ -7,6 +7,10 @@ using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using FluentValidation;
+using Core.CrossCuttingConcerns.Validation.FluentValidation;
 
 namespace Business.Concrete
 {
@@ -18,15 +22,11 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-         
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car entity)
-        {
-            if (entity.DailyPrice < 0 || entity.CarName.Length < 2)
-            {
-                return new ErrorResult(Messages.CarNameOrPriceInvalid);
-            }
-
+        { 
+           
             _carDal.Add(entity);
 
             return new SuccessResult(Messages.CarAdded);

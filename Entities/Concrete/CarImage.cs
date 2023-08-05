@@ -7,7 +7,7 @@ using Core.Entities;
 
 namespace Entities.Concrete
 {
-    public class Carlmages : IEntity
+    public class Carlmage : IEntity
     {
         public int Id { get; set; }
         public int CarId { get; set; }

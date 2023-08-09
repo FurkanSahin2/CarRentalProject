@@ -7,8 +7,6 @@
 
 <br>
 
-<br>
-
 **Kullanılan Teknolojiler:**
 
 - Restful API

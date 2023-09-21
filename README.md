@@ -60,4 +60,6 @@ Araba Kiralama Projemiz localdb ile çalışmaktadır. **LocalDb**'de veritaban�
 - Transaction
 
 - Performance
+
+- Logg 
 - ...

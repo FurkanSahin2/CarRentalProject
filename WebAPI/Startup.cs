@@ -86,7 +86,10 @@ namespace WebAPI
                 app.UseHsts();
             }
 
+            app.ConfigureCustomExceptionMiddleware();
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
